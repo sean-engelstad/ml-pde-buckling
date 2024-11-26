@@ -19,8 +19,8 @@ class PINN_EigenNet(PINN_NeuralNet):
         self.lambd_list = []
 
 class StrongFormBucklingPINN(PINNSolver):
-    def __init__(self, D:float, Nxx:float, Nxy:float, Nyy:float, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, D:float, Nxx:float, Nxy:float, Nyy:float, model, X_r):
+        super().__init__(model, X_r)
         self.D = tf.constant(D, dtype=DTYPE)
         self.Nxx = tf.constant(Nxx, dtype=DTYPE)
         self.Nxy = tf.constant(Nxy, dtype=DTYPE)
@@ -31,7 +31,7 @@ class StrongFormBucklingPINN(PINNSolver):
         return self.D * (d4x + 2. * d2x2y + d4y) - self.model.lambd * \
             (self.Nxx * d2x + 2. * self.Nxy * dxy + self.Nyy * d2y)
     
-    @tf.function # forces tensorflow to compile the graph statically
+    # @tf.function # forces tensorflow to compile the graph statically
     def get_r(self):
         """For buckling PINN strong form"""
 

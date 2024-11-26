@@ -20,18 +20,21 @@ class PINN_NeuralNet(tf.keras.Model):
         self.ub = ub
         
         # Define NN architecture
-        self.scale = tf.keras.layers.Lambda(
-            lambda x: 2.0*(x - lb)/(ub - lb) - 1.0)
-        self.hidden = [tf.keras.layers.Dense(num_neurons_per_layer,
-                             activation=tf.keras.activations.get(activation),
-                             kernel_initializer=kernel_initializer)
-                           for _ in range(self.num_hidden_layers)]
-        self.out = tf.keras.layers.Dense(output_dim)
+        layers = [tf.keras.layers.Lambda(
+            lambda x: 2.0*(x - lb)/(ub - lb) - 1.0)]
+        layers += [
+            tf.keras.layers.Dense(num_neurons_per_layer,
+                                activation=tf.keras.activations.get(activation),
+                                kernel_initializer=kernel_initializer)
+            for _ in range(self.num_hidden_layers)
+        ]
+        layers += [tf.keras.layers.Dense(output_dim)]
+        self.model = tf.keras.Sequential(layers)
         
     def call(self, X):
-        """Forward-pass through neural network."""
-        # Z = self.scale(X)
-        # for i in range(self.num_hidden_layers):
-        #     Z = self.hidden[i](Z)
-        # return self.out(Z)
+        return self.model(X)
+    
+    # def build(self, input_shape):
+    #     self.model.build(input_shape)
+    #     self.built = True
         
