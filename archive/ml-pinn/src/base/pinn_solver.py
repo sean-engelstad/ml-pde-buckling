@@ -71,7 +71,7 @@ class PINNSolver():
     def solve_with_TFoptimizer(self, optimizer, X, u, N=1001):
         """This method performs a gradient descent type optimization."""
         
-        # @tf.function # comment out to stop executing eagerly?
+        @tf.function # comment out to stop executing eagerly?
         def train_step():
             loss, grad_theta = self.get_grad(X, u)
             
