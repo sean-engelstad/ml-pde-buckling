@@ -1,0 +1,11 @@
+Proof of conditional mean:
+https://math.stackexchange.com/questions/4586879/understanding-the-proof-that-the-conditional-distribution-of-a-gaussian-random-v
+
+Look at this paper by Chen, "Solving and learning nonlinear PDEs with Gaussian processes"
+I should have some old code for this.
+
+Can we solve a strong-form version of the differential eigenvalue problem with Gaussian process conditionals? 
+Or can we minimize the Rayleigh's quotient among a number of test points using interpolations of the Gaussian process?
+Just something to think about here..
+
+Make sure you look up what the actual strain energy functional and stability energy for plate theory is.

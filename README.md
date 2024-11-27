@@ -30,3 +30,4 @@ Also: other main comments:
 Also: would like to try Gaussian process method to solve PDEs and look at that book for better FEM basis functions with Gaussian processes
 * Gaussian process methods
 * wavelets and other operator methods
+Look at this paper by Chen, "Solving and learning nonlinear PDEs with Gaussian processes"
