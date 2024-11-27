@@ -14,6 +14,9 @@ Would like to try different types of networks as well:
 2 - Fourier Neural Operator (FNN in Fourier space)
 3 - others?
 
+Operator learning as well:
+1 - Deep ONet, etc.
+
 Also: other main comments:
 * how to achieve deeper solution? see multi-stage NN paper which achieves machine precision solutions.
 * how to solve simple problems faster when you know they have low wavenumbers
@@ -21,3 +24,9 @@ Also: other main comments:
 * can we solve multiple eigenmodes by orthogonality constraint and repeating the domain inputs => phi outputs in parallel?
 * can FNO (Fourier neural operator) help us constrain the wavenumbers?
 * feels wrong that it takes us so long to converge to very simple low wavenumber solutions. has to be cleaner way.
+
+* Can I somehow add a constraint to FNO or regular FNN that the max wavenumber is less than the quad point spacing (so numerical integral is valid)?
+
+Also: would like to try Gaussian process method to solve PDEs and look at that book for better FEM basis functions with Gaussian processes
+* Gaussian process methods
+* wavelets and other operator methods
