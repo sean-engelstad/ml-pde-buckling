@@ -14,3 +14,10 @@ Would like to try different types of networks as well:
 2 - Fourier Neural Operator (FNN in Fourier space)
 3 - others?
 
+Also: other main comments:
+* how to achieve deeper solution? see multi-stage NN paper which achieves machine precision solutions.
+* how to solve simple problems faster when you know they have low wavenumbers
+* can we constrain the wavenumbers in the model?
+* can we solve multiple eigenmodes by orthogonality constraint and repeating the domain inputs => phi outputs in parallel?
+* can FNO (Fourier neural operator) help us constrain the wavenumbers?
+* feels wrong that it takes us so long to converge to very simple low wavenumber solutions. has to be cleaner way.
