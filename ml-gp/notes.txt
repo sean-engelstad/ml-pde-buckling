@@ -9,3 +9,6 @@ Or can we minimize the Rayleigh's quotient among a number of test points using i
 Just something to think about here..
 
 Make sure you look up what the actual strain energy functional and stability energy for plate theory is.
+
+Can we construct the mean and covariance of the strain energy, stability, etc. from the conditional based on observed
+training points? Can we solve a buckling problem using this? Could be a fun way to solve it for this project..
